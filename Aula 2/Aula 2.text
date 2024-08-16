@@ -1,0 +1,11 @@
+linear = quando se ler linha por linha
+O programador deve dizer qual e a próxima linha que deve ser executada pelo programa
+
+parseFloat - converte o texto para número também conhecido como Casting
+
+!isNaN = serve para negar se um valor e verdadeiro ele ficar como falso
+
+ex: se não tiver vazio
+
+quando se usa $ + {variavel} se chama bide
+conhecida como interpolação dos três

@@ -1,0 +1,5 @@
+Faça um programa que receba como dado de dentrada o valor de uma compra
+E mostre como resultado o valor da compra já com desconto
+
+Onde compras com valor até 300 reais o desconto será de 5%
+Compras com valor acima de 300 o desconto será 10%
