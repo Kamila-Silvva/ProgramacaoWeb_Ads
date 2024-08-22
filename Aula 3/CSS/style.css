@@ -1,0 +1,18 @@
+div {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #a7e6ff8a;
+    border: 1px solid #a7e6ff;
+    border-radius: 25px;
+}
+
+h1, p {
+    color: #050C9C;
+}
+
+.colorBlue {
+    color: #3ABEF9;
+}
