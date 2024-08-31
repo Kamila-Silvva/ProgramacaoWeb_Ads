@@ -1,4 +1,3 @@
-function Resultado() {
     let res = document.getElementById("res");
     let nomeVendedor = document.getElementById("nomeVendedor");
     let valorVenda = document.getElementById("valorVenda");
@@ -7,7 +6,6 @@ function Resultado() {
     let vendedor = [];
     let venda = [];
     let desconto = [];
-}
 
 function cadastrar() { //btn cadastrar
 
@@ -25,7 +23,7 @@ function cadastrar() { //btn cadastrar
         }
         nomeVendedor.value = '';
         valorVenda.value = '';
-        event.preventDefault() // essa função faz com que o o botão não haja naturalmente, seu evento padrão não acontece, ou seja, era pra ele mandar para outra página, e para que isso não aconteça, usamos essa função do js
+        preventDefault() // essa função faz com que o o botão não haja naturalmente, seu evento padrão não acontece, ou seja, era pra ele mandar para outra página, e para que isso não aconteça, usamos essa função do js
     }
 }
 
@@ -35,7 +33,7 @@ function limpar() {// zera todas as variáveis
             venda = [];
             desconto = [];
 
-            event.preventDefault();
+            preventDefault();
         }
 
         function removerAnterior() {
@@ -50,6 +48,6 @@ function limpar() {// zera todas as variáveis
                 res.innerHTML += `<p>${o}</p><p>${vendedor[i]}</p><p>R$${venda[i].toFixed(2)}</p><p>R$${desconto[i].toFixed(2)}</p>`; // toFixed(2) --> mostra somente duas casas decimais após a virgula
             }
 
-            event.preventDefault();
+            preventDefault();
 
-        }
+}
