@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="venda.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>FINALIZANDO VENDA</h1>
+    <div class="formulario">
+        <form id="form">
+            <div class="campo">
+                <label> Nome Vendedor</label>
+                <input type="text" id="nome"> <br><br>
+            </div>
+
+            <div class="campo">
+                <label> Valor da Venda</label>
+                <input type="text" id="valor"><br><br>
+            </div>
+
+            <div class="buttons">
+                <button type="button" onclick="preencherVetor()">Cadastrar</button>
+                <button type="button" onclick="excluirDado()">Remover</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabela">
+        <table id="tabela">
+            <tr>
+                <th>id</th>
+                <th>Nome Vendedor</th>
+                <th>Valor</th>
+                <th>Desconto</th>
+            </tr>
+        </table>
+    </div>
+    <script src="venda.js"></script>
+</body>
+
+</html>
