@@ -19,7 +19,7 @@ function cadastrar() { //btn cadastrar
         conta.push(valorConta.value);
         divisaoCliente.push(divisaoCliente.value)
         res.innerHTML = ""; // zara a tabela para que não haja itens duplicados
-        res.innerHTML += "<p>Id</p><p>Nome mesa</p><p>Valor</p> <p>valorUnitario</p>"; // cabeçalho
+        res.innerHTML += "<p>Nome mesa</p><p>Valor</p> <p>valor Unitario</p>"; // cabeçalho
         for (i = 0; i < mesa.length; i++) {// estrutura que mostra a tabela
             let o = i + 1;
             res.innerHTML += `<p>${o}</p><p>${mesa[i]}</p><p>R$${conta[i].toFixed(2)}</p><p>R$${valorUnitario[i].toFixed(2)}</p>`;
