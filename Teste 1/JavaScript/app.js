@@ -1,7 +1,7 @@
     let res = document.getElementById("res");
     let numeroMesa = document.getElementById("numeroMesa");
     let valorConta = document.getElementById("valorConta");
-    let quantidadeCliente = document.getElementById("valorConta");
+    let quantidadeCliente = document.getElementById("quantidadeCliente");
 
     // arrays
     let mesa = [];
@@ -14,12 +14,12 @@ function cadastrar() { //btn cadastrar
     if (numeroMesa.value == "" || valorConta.value == "" || quantidadeCliente == "") {
         window.alert("Erro!!! Os campos não foram preenchidos.");
     } else {
-        valorUnitario.push(valorConta.value / quantidadeCliente); //pucha o valor para a variável
-        mesa.push(numeroMesa.value);
-        conta.push(valorConta.value);
-        divisaoCliente.push(divisaoCliente.value)
+        valorUnitario.push(Number(valorConta.value) / quantidadeCliente); //pucha o valor para a variável
+        mesa.push(Numeber(numeroMesa.value));
+        conta.push(Number(valorConta.value));
+        divisaoCliente.push(Number(divisaoCliente.value))
         res.innerHTML = ""; // zara a tabela para que não haja itens duplicados
-        res.innerHTML += "<p>Nome mesa</p><p>Valor</p> <p>valor Unitario</p>"; // cabeçalho
+        res.innerHTML += "<p>Número da mesa</p><p>Valor</p> <p>Valor por Cliente</p>"; // cabeçalho
         for (i = 0; i < mesa.length; i++) {// estrutura que mostra a tabela
             let o = i + 1;
             res.innerHTML += `<p>${o}</p><p>${mesa[i]}</p><p>R$${conta[i].toFixed(2)}</p><p>R$${valorUnitario[i].toFixed(2)}</p>`;
@@ -46,7 +46,7 @@ function limpar() {// zera todas as variáveis
             valorUnitario.pop();
             divisaoCliente.pop();
             res.innerHTML = "";
-            res.innerHTML += "<p>Nome mesa</p><p>Valor</p><p>Valor por Cliente</p>";
+            res.innerHTML += "<p>Número da mesa</p><p>Valor</p><p>Valor por Cliente</p>";
             for (i = 0; i < mesa.length; i++) {
                 let o = i + 1; // para mostrar a pessoa com o indice 0 mostrando o id
                 res.innerHTML += `<p>${o}</p><p>${mesa[i]}</p><p>R$${conta[i].toFixed(2)}</p><p>R$${valorUnitario[i].toFixed(2)}</p>`; // toFixed(2) --> mostra somente duas casas decimais após a virgula
