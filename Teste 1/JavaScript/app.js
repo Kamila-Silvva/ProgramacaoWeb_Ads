@@ -1,57 +1,46 @@
-    let res = document.getElementById("res");
-    let numeroMesa = document.getElementById("numeroMesa");
-    let valorConta = document.getElementById("valorConta");
-    let quantidadeCliente = document.getElementById("quantidadeCliente");
+let res = document.getElementById("res");
+let numeroMesa = document.getElementById("numeroMesa");
+let valorConta = document.getElementById("valorConta");
+let quantidadeCliente = document.getElementById("quantidadeCliente");
 
-    // arrays
-    let mesa = [];
-    let conta = [];
-    let divisaoCliente = [];
-    let valorUnitario = [];
+// Arrays para armazenar os dados
+let contas = []; 
 
-function cadastrar() { //btn cadastrar
-
-    if (numeroMesa.value == "" || valorConta.value == "" || quantidadeCliente == "") {
+function cadastrar() {
+    if (numeroMesa.value == "" || valorConta.value == "" || quantidadeCliente.value == "") {
         window.alert("Erro!!! Os campos não foram preenchidos.");
     } else {
-        valorUnitario.push(Number(valorConta.value) / quantidadeCliente); //pucha o valor para a variável
-        mesa.push(Numeber(numeroMesa.value));
-        conta.push(Number(valorConta.value));
-        divisaoCliente.push(Number(divisaoCliente.value))
-        res.innerHTML = ""; // zara a tabela para que não haja itens duplicados
-        res.innerHTML += "<p>Número da mesa</p><p>Valor</p> <p>Valor por Cliente</p>"; // cabeçalho
-        for (i = 0; i < mesa.length; i++) {// estrutura que mostra a tabela
-            let o = i + 1;
-            res.innerHTML += `<p>${o}</p><p>${mesa[i]}</p><p>R$${conta[i].toFixed(2)}</p><p>R$${valorUnitario[i].toFixed(2)}</p>`;
-        }
+        // Calculo do valor por cliente
+        let valorPorCliente = Number(valorConta.value) / Number(quantidadeCliente.value);
+
+        // Armazenar os dados da conta
+        let novaConta = {
+            mesa: Number(numeroMesa.value),
+            valorTotal: Number(valorConta.value),
+            clientes: Number(quantidadeCliente.value),
+            valorPorCliente: valorPorCliente.toFixed(2) 
+        };
+
+        // Adiciona a nova conta ao array de contas
+        contas.push(novaConta);
+
+        // Atualiza a exibição dos dados
+        atualizarExibicao();
+
+        // Limpa os campos do formulário
         numeroMesa.value = '';
         valorConta.value = '';
-        preventDefault() // essa função faz com que o o botão não haja naturalmente, seu evento padrão não acontece, ou seja, era pra ele mandar para outra página, e para que isso não aconteça, usamos essa função do js
+        quantidadeCliente.value = ''; 
     }
 }
 
-function limpar() {// zera todas as variáveis
-            res.innerHTML = "";
-            mesa = [];
-            conta = [];
-            valorUnitario = [];
-            divisaoCliente = [];
+function atualizarExibicao() {
+    res.innerHTML = ""; 
+    res.innerHTML += "<h2>Lista de Contas</h2>";
+    res.innerHTML += "<p>Número da mesa | Valor Total | Clientes | Valor por Cliente</p>"; 
 
-            preventDefault();
-        }
-
-        function removerAnterior() {
-            mesa.pop();// função usada para remover o ultimo valor dentro de um array
-            conta.pop();
-            valorUnitario.pop();
-            divisaoCliente.pop();
-            res.innerHTML = "";
-            res.innerHTML += "<p>Número da mesa</p><p>Valor</p><p>Valor por Cliente</p>";
-            for (i = 0; i < mesa.length; i++) {
-                let o = i + 1; // para mostrar a pessoa com o indice 0 mostrando o id
-                res.innerHTML += `<p>${o}</p><p>${mesa[i]}</p><p>R$${conta[i].toFixed(2)}</p><p>R$${valorUnitario[i].toFixed(2)}</p>`; // toFixed(2) --> mostra somente duas casas decimais após a virgula
-            }
-
-            preventDefault();
-
+    for (let i = 0; i < contas.length; i++) {
+        let conta = contas[i];
+        res.innerHTML += `<p>${conta.mesa} | R$ ${conta.valorTotal.toFixed(2)} | ${conta.clientes} | R$ ${conta.valorPorCliente}</p>`;
+    }
 }
