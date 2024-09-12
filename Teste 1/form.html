@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Formulário Conta</title>
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <h1 class="mb-4">Calculando Conta</h1>
+      <div class="card">
+        <div class="card-body">
+          <form id="formulario">
+            <div class="form-group">
+              <label for="numeroMesa">Número da mesa:</label>
+              <input
+                type="number"
+                class="form-control"
+                name="numeroMesa"
+                id="numeroMesa"
+              />
+            </div>
+            <div class="form-group">
+              <label for="valorConta">Valor total da Conta:</label>
+              <input
+                type="number"
+                class="form-control"
+                name="valorConta"
+                id="valorConta"
+              />
+            </div>
+            <div class="form-group">
+              <label for="quantidadeCliente">Quantidade de clientes:</label>
+              <input
+                type="number"
+                class="form-control"
+                name="quantidadeCliente"
+                id="quantidadeCliente"
+              />
+            </div>
+            <button type="button" class="btn btn-outline-success" onclick="cadastrar()">Cadastrar</button>
+            <button type="button" class="btn btn-outline-info" onclick="removerAnterior()">Remover</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="limpar()">Limpar</button>
+          </form>
+        </div>
+      </div>
+      <div id="res" class="mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="JavaScript/app.js"></script>
+  </body>
+</html>
